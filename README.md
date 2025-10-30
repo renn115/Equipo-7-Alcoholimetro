@@ -1,4 +1,4 @@
-# Alcoholímetro Digital con Arduino
+# 🍸 Alcoholímetro Digital con Arduino
 
 Simulador de alcoholímetro que detecta concentración de alcohol en el aire mediante sensor MQ-3 y proporciona retroalimentación visual y sonora para prevenir conducción bajo efectos del alcohol.
 
