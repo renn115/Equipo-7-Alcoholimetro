@@ -12,10 +12,6 @@ Este proyecto lee continuamente las concentraciones de alcohol del ambiente, com
 
 La conducción bajo los efectos del alcohol es una de las principales causas de accidentes de tránsito mortales. Este alcoholímetro ofrece una herramienta accesible para verificar niveles de alcohol antes de conducir, promoviendo decisiones responsables y previniendo accidentes.
 
-### // Alcance
-
-Este prototipo tiene fines didácticos y demostrativos. Su alcance es académico: demostrar cómo integrar sensores analógicos, indicadores LED y alertas sonoras mediante programación en Arduino para abordar un problema de seguridad vial.
-
 ## ⚙️ Requisitos e instalación
 
 ### 🧩 Hardware necesario
