@@ -74,23 +74,29 @@ git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 
 ### 🧠 Comportamientos principales
 
-| Estado | Condición | Indicadores |
-|--------|-----------|-------------|
-| SEGURO | alcohol ≤ 232 | LED Verde ON, LED Rojo OFF, Buzzer OFF |
-| PELIGRO | alcohol > 232 | LED Verde OFF, LED Rojo ON, Buzzer intermitente |
+| Estado | Condición | Rango (g/L) | Indicadores |
+|--------|-----------|-------------| -------------|
+| SOBRIO | alcohol < 95 | 0.00-0.07 | 0.00-0.07 | LED Verde ON, LED Rojo OFF, Buzzer OFF |
+| NIVEL BAJO | 95 ≤ alcohol ≤ 122 | 0.08-0.25 | 0.00-0.07 | LED Verde ON, LED Rojo OFF, Buzzer OFF |
+| NIVEL MEDIO | 122 < alcohol ≤ 158 | 0.26-0.50 | 0.00-0.07 | LED Verde OFF, LED Rojo ON, Buzzer intermitente (500ms) |
+| NIVEL ALTO | 158 < alcohol ≤ 195 | 0.51-0.75 | 0.00-0.07 | LED Verde OFF, LED Rojo ON, Buzzer intermitente (800ms) |
+| NIVEL MUY ALTO | alcohol > 195 | 0.76-2.00 | 0.00-0.07 | LED Verde OFF, LED Rojo ON, Buzzer intermitente (1000ms) |
 
 **Valores del sensor:**
-- Mínimo: 85 (sin alcohol)
-- Máximo: 378 (alta concentración)
-- Umbral: 232 (punto medio de alerta)
+- Mínimo: 95
+- Umbral: 145 (punto medio de alerta)
+- Máximo: 195
+
 
 ## 📁 Estructura del proyecto
 ```
-alcoholimetro-arduino/
-├── alcoholimetro.ino # Código fuente
-├── README.md # Descripción del proyecto
-├── /diagrams # Diagramas del sistema
-└── /docs # Documentación adicional
+│
+├── README.md              # Descripción del proyecto
+├── alcoholimetro.ino      # Código fuente principal
+├── /diagramas             # Diagramas del sistema
+│   ├── diagrama-esquematico.png
+│   └── diagrama-pictorico.png
+│   └── diagrama-bloques.png
 ```
 
 ## 🧩 Arquitectura del sistema
