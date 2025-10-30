@@ -2,201 +2,201 @@
 
 Simulador de alcoholímetro que detecta concentración de alcohol en el aire mediante sensor MQ-3 y proporciona retroalimentación visual y sonora para prevenir conducción bajo efectos del alcohol.
 
-## Descripción
+## 📘 Descripción del proyecto
 
-El Alcoholímetro Digital es un prototipo educativo diseñado para detectar la concentración de alcohol en el aire mediante un sensor de gas MQ-3. El sistema analiza los niveles detectados y proporciona retroalimentación visual y sonora según el grado de peligrosidad: un LED verde indica niveles seguros, mientras que un LED rojo acompañado de una alarma intermitente señala concentraciones peligrosas que superan el umbral establecido.
+El Alcoholímetro Digital es un prototipo educativo que detecta la concentración de vapores de alcohol en el aire y proporciona alertas inmediatas mediante indicadores visuales y sonoros. 
 
-### Problema que Resuelve
+Su objetivo es concientizar sobre los peligros de conducir bajo efectos del alcohol y demostrar el uso de sensores analógicos, actuadores y lógica de control en un proyecto real con Arduino.
 
-La conducción bajo los efectos del alcohol es una de las principales causas de accidentes de tránsito mortales a nivel mundial. Este proyecto ofrece una herramienta accesible y educativa para detectar niveles peligrosos de alcohol antes de conducir, promoviendo la prevención de accidentes y la toma de decisiones responsables.
+Este proyecto lee continuamente las concentraciones de alcohol del ambiente, compara los valores con un umbral de seguridad predefinido, y activa un LED verde cuando es seguro o un LED rojo con alarma sonora cuando detecta niveles peligrosos.
+
+### Problema que resuelve
+
+La conducción bajo los efectos del alcohol es una de las principales causas de accidentes de tránsito mortales. Este alcoholímetro ofrece una herramienta accesible para verificar niveles de alcohol antes de conducir, promoviendo decisiones responsables y previniendo accidentes.
 
 ### Alcance
 
-Este prototipo tiene fines didácticos y demostrativos. Su alcance es académico: demostrar cómo se pueden integrar sensores analógicos, indicadores LED y alertas sonoras mediante programación en Arduino para abordar un problema de seguridad vial de forma práctica y comprensible.
+Este prototipo tiene fines didácticos y demostrativos. Su alcance es académico: demostrar cómo integrar sensores analógicos, indicadores LED y alertas sonoras mediante programación en Arduino para abordar un problema de seguridad vial.
 
-## Requisitos
+## ⚙️ Requisitos e instalación
 
-### Hardware
-- 1x Arduino UNO
-- 1x Sensor de gas MQ-3
-- 1x LED verde (5mm)
-- 1x LED rojo (5mm)
-- 1x Buzzer piezoeléctrico (5V)
-- 2x Resistencias 220Ω
-- 1x Resistencia 1kΩ
-- 1x Protoboard (830 puntos)
+### 🧩 Hardware necesario
+
+- 1 × Arduino UNO (ATmega328P)
+- 1 × Sensor de gas MQ-3 (detector de alcohol)
+- 1 × LED verde (5mm)
+- 1 × LED rojo (5mm)
+- 1 × Buzzer piezoeléctrico (5V)
+- 2 × Resistencias 220Ω (para LEDs)
+- 1 × Resistencia 1kΩ (para sensor)
+- 1 × Protoboard (830 puntos)
 - Cables jumper macho-macho
 - Cable USB tipo A a tipo B
 
-### Software
-- Arduino IDE 1.8.13 o superior
-- Drivers CH340 (si es necesario)
 
-## Instalación
+### 💻 Software necesario
 
-### 1. Configuración del Software
+- Arduino IDE (versión 1.8.13 o superior)
+- Drivers CH340 (solo si tu Arduino es clon)
+- Cable USB para subir el código
+
+### 🔧 Instalación
+
+**1. Descarga o clona este repositorio:**
 ```bash
-# Descargar e instalar Arduino IDE desde:
-https://www.arduino.cc/en/software
+git clone https://github.com/tu-usuario/alcoholimetro-arduino.git
 ```
 
-### 2. Montaje del Circuito
+**2. Abre el archivo `alcoholimetro.ino` en el Arduino IDE.**
 
-**Conexiones:**
+**3. Selecciona tu placa y puerto:**
+- Placa: Arduino UNO
+- Puerto: COMx (Windows) o /dev/ttyUSBx (Linux/Mac)
+
+**4. Carga el código en el Arduino con el botón Subir (Upload).**
+
+**5. Conecta los componentes según el diagrama de pines:**
 
 | Componente | Pin Arduino | Observaciones |
 |------------|-------------|---------------|
-| Sensor MQ-3 | A0 | Conectar a través de resistencia 1kΩ |
-| Sensor MQ-3 VCC | 5V | Alimentación del sensor |
-| Sensor MQ-3 GND | GND | Tierra común |
-| LED Verde | Pin 2 | Con resistencia 220Ω en serie |
-| LED Rojo | Pin 3 | Con resistencia 220Ω en serie |
-| Buzzer | Pin 4 | Directo (sin resistencia) |
-| Todos GND | GND | Tierra común compartida |
+| Sensor MQ-3 VCC | 5V | Alimentación |
+| Sensor MQ-3 GND | GND | Tierra |
+| Sensor MQ-3 AOUT | A0 | A través de resistencia 1kΩ |
+| LED Verde (+) | Pin 2 | Con resistencia 220Ω |
+| LED Rojo (+) | Pin 3 | Con resistencia 220Ω |
+| Buzzer (+) | Pin 4 | Directo |
+| Todos los (-) | GND | Tierra común |
 
-### 3. Cargar el Código
+## ▶️ Cómo usarlo
 
-1. Abre Arduino IDE
-2. Copia el código del archivo `alcoholimetro.ino`
-3. Conecta el Arduino UNO a tu PC mediante USB
-4. Selecciona la placa: `Herramientas > Placa > Arduino UNO`
-5. Selecciona el puerto: `Herramientas > Puerto > COMx` (Windows) o `/dev/ttyUSBx` (Linux/Mac)
-6. Haz clic en el botón "Subir" (→)
+1. Conecta el Arduino a una fuente USB
+2. Espera 20-30 segundos para que el sensor MQ-3 se caliente
+3. Sopla cerca del sensor o acerca alcohol isopropílico
+4. Observa la respuesta del sistema:
+   - **LED Verde encendido**: Nivel seguro (≤ 232)
+   - **LED Rojo + Alarma intermitente**: Nivel peligroso (> 232)
+5. Puedes ver los valores en tiempo real abriendo el **Monitor Serial** (9600 baudios)
 
-## Cómo Usarlo
+### 🧠 Comportamientos principales
 
-### Ejecución del Sistema
+| Estado | Condición | Indicadores |
+|--------|-----------|-------------|
+| SEGURO | alcohol ≤ 232 | LED Verde ON, LED Rojo OFF, Buzzer OFF |
+| PELIGRO | alcohol > 232 | LED Verde OFF, LED Rojo ON, Buzzer intermitente |
 
-1. **Encender**: Conecta el Arduino a USB o fuente de alimentación
-2. **Calibración**: Espera 20-30 segundos para que el sensor MQ-3 se caliente
-3. **Prueba**: Sopla suavemente cerca del sensor o acerca alcohol
-4. **Interpretación**:
-   - 🟢 **LED Verde**: Nivel seguro (valor ≤ 232)
-   - 🔴 **LED Rojo + Alarma**: Nivel peligroso (valor > 232)
+**Valores del sensor:**
+- Mínimo: 85 (sin alcohol)
+- Máximo: 378 (alta concentración)
+- Umbral: 232 (punto medio de alerta)
 
-### Monitor Serial
-
-Para visualizar valores en tiempo real:
-```bash
-# En Arduino IDE:
-Herramientas > Monitor Serial
-# Configurar velocidad: 9600 baudios
-```
-
-**Salida esperada:**
-```
-85
-92
-103
-...
-245  # LED rojo + alarma activos
-```
-
-### Ajuste de Sensibilidad
-
-Modifica el umbral en el código según necesites:
-```cpp
-// Línea 14 del código
-if (alcohol > 232) {  // Cambia 232 por el valor deseado
-```
-
-- **Valores más bajos** (ej: 150): Mayor sensibilidad
-- **Valores más altos** (ej: 300): Menor sensibilidad
-
-### Simulación en Tinkercad
-
-Prueba el proyecto virtualmente:
-
-1. Accede a [Tinkercad Circuits](https://www.tinkercad.com/circuits)
-2. Crea un nuevo circuito
-3. Importa los componentes y conecta según diagrama
-4. Copia el código en el editor
-5. Inicia la simulación
-
-## Estructura del Proyecto
+## 📁 Estructura del proyecto
 ```
 alcoholimetro-arduino/
-│
-├── alcoholimetro.ino          # Código principal del Arduino
-├── README.md                  # Este archivo
-├── diagrams/
-│   ├── diagrama_bloques.svg   # Diagrama de bloques del sistema
-│   └── esquematico.png        # Esquema de conexiones
-├── docs/
-│   ├── documentacion.pdf      # Documentación completa
-│   └── tabla_componentes.md   # Especificaciones de componentes
-└── images/
-    ├── montaje_fisico.jpg     # Foto del circuito armado
-    └── tinkercad_sim.png      # Captura de simulación
+├── alcoholimetro.ino # Código fuente
+├── README.md # Descripción del proyecto
+├── /diagrams # Diagramas del sistema
+└── /docs # Documentación adicional
 ```
 
-## Arquitectura del Sistema
+## 🧩 Arquitectura del sistema
 
-### Módulos Principales
+El sistema del Alcoholímetro está conformado por tres módulos principales: entrada, procesamiento y salida.
 
-**1. Módulo de Entrada**
-- Sensor MQ-3 conectado a pin A0
-- Resistencia de carga 1kΩ
+**Módulo de entrada (Sensor):**
 
-**2. Módulo de Procesamiento**
-- Arduino UNO (ATmega328P)
-- Algoritmo de comparación con umbral (232)
+Compuesto por el sensor de gas MQ-3 y una resistencia de carga de 1kΩ. El sensor detecta vapores de etanol en el aire y genera una señal analógica proporcional a la concentración. Esta señal es enviada al pin A0 del Arduino, donde es convertida a valores digitales de 0 a 1023 mediante el conversor analógico-digital de 10 bits.
 
-**3. Módulo de Salida**
-- LED Verde (Pin 2) - Estado seguro
-- LED Rojo (Pin 3) - Estado peligroso
-- Buzzer (Pin 4) - Alarma sonora
+**Módulo de procesamiento (Arduino UNO):**
 
-### Comunicación Entre Módulos
+Es el cerebro del sistema. Recibe las lecturas del sensor, analiza la información y decide las acciones que debe realizar. A partir de la lógica del programa, el Arduino compara el valor leído con el umbral de seguridad (232). Si el valor es mayor, activa el estado de peligro; si es menor o igual, mantiene el estado seguro. Este procesamiento ocurre continuamente en el loop principal.
 
-| Conexión | Tipo | Protocolo | Función |
-|----------|------|-----------|---------|
-| Sensor → Arduino | Analógica | ADC 10-bit | `analogRead(A0)` |
-| Arduino → LED Verde | Digital | ON/OFF | `digitalWrite(2, HIGH/LOW)` |
-| Arduino → LED Rojo | Digital | ON/OFF | `digitalWrite(3, HIGH/LOW)` |
-| Arduino → Buzzer | Digital | Intermitente | `digitalWrite(4, HIGH/LOW)` |
-| Arduino → PC | Serial | UART 9600 | `Serial.println()` |
+**Módulo de salida (Actuadores):**
 
-## Funcionamiento Interno
+Incluye dos LEDs (verde y rojo) que proporcionan retroalimentación visual del estado, un buzzer que emite alarma sonora intermitente en caso de peligro, y comunicación serial USB para monitoreo en tiempo real. Los LEDs están conectados a los pines digitales 2 y 3 con resistencias limitadoras de 220Ω. El buzzer está conectado al pin 4 y se activa con un patrón de 1 segundo encendido y 1 segundo apagado.
 
-El sistema opera en un ciclo continuo:
+**Flujo de funcionamiento:**
 
-1. Lee valor analógico del sensor MQ-3 (rango 85-378)
-2. Compara con umbral de seguridad (232)
-3. Si `alcohol > 232`: Activa LED rojo + alarma intermitente
-4. Si `alcohol ≤ 232`: Activa LED verde
-5. Envía valores al Monitor Serial
-6. Repite el ciclo
+El sensor MQ-3 detecta concentración de alcohol → Arduino lee el valor analógico y lo convierte a digital → compara con el umbral (232) → activa LED verde si es seguro o LED rojo + buzzer si es peligroso → envía valores por serial para monitoreo → repite el ciclo continuamente.
 
-## Tecnologías Utilizadas
+### 🔄 Comunicación entre módulos
 
-- **Lenguaje**: C++ (Arduino)
-- **Hardware**: Arduino UNO (ATmega328P)
-- **Sensor**: MQ-3 (Electroquímico de gas)
-- **Comunicación**: UART (Serial 9600 baudios)
-- **Plataforma de desarrollo**: Arduino IDE
-- **Simulación**: Tinkercad Circuits
+**Sensor MQ-3 → Arduino:**
+- Pin A0 (entrada analógica)
+- Señal: 0-1023 (conversión ADC)
+- `analogRead(A0)`
 
-## Contribución
+**Arduino → LED Verde:**
+- Pin 2 (salida digital)
+- Señal: HIGH/LOW
+- Activo cuando `alcohol ≤ 232`
 
-Este es un proyecto educativo de código abierto. Puedes contribuir:
+**Arduino → LED Rojo:**
+- Pin 3 (salida digital)
+- Señal: HIGH/LOW
+- Activo cuando `alcohol > 232`
 
-- Documentando mejoras o variaciones del circuito
-- Reportando errores o problemas encontrados
-- Proponiendo nuevas funcionalidades (LCD, Bluetooth, etc.)
-- Compartiendo tu implementación física
-- Creando material educativo adicional
+**Arduino → Buzzer:**
+- Pin 4 (salida digital)
+- Señal: Intermitente 1s ON/OFF
+- Activo cuando `alcohol > 232`
 
-## Licencia
+**Arduino → PC:**
+- Puerto USB
+- UART 9600 baudios
+- `Serial.println(alcohol)`
 
-Este proyecto es de código abierto con fines educativos.
+## 🧠 Resumen técnico del sistema
 
-## Recursos Adicionales
+- Control principal con Arduino UNO (ATmega328P)
+- Sensor analógico MQ-3 mide concentración de alcohol
+- LEDs controlados por pines digitales 2 y 3
+- Buzzer controlado por pin digital 4
+- Lógica de decisión basada en umbral (232)
+- Comunicación serial a 9600 baudios para monitoreo
+- Sistema de lectura continua en loop infinito
+
+## 🪜 Guía paso a paso de instalación
+
+1. **Instala Arduino IDE** desde https://www.arduino.cc/en/software
+2. **Conecta el sensor MQ-3** al pin A0 con resistencia de 1kΩ a GND
+3. **Conecta el LED verde** al pin 2 con resistencia de 220Ω
+4. **Conecta el LED rojo** al pin 3 con resistencia de 220Ω
+5. **Conecta el buzzer** al pin 4
+6. **Conecta todos los GND** a tierra común del Arduino
+7. **Conecta VCC del sensor** a 5V del Arduino
+8. **Sube el programa** al Arduino desde el IDE
+9. **Alimenta el sistema** con USB (5V)
+10. **Espera 30 segundos** para precalentamiento del sensor
+11. **Observa el comportamiento** en el monitor serial (opcional)
+
+## ❓ FAQ
+
+**1. ¿Qué pasa si el LED verde no se enciende al inicio?**
+
+Espera 20-30 segundos más para que el sensor se caliente completamente. Durante el precalentamiento puede mostrar valores erráticos.
+
+**2. El buzzer no suena.**
+
+Verifica la polaridad (+ al pin 4, - a GND) y prueba con código de test individual. Algunos buzzers necesitan señal PWM: usa `analogWrite(4, 128)`.
+
+**3. Los valores del sensor siempre son 0 o 1023.**
+
+Verifica que la resistencia de 1kΩ esté bien conectada entre AOUT y GND. Mide con multímetro que haya 5V entre VCC y GND del sensor.
+
+**4. ¿Puedo ajustar la sensibilidad?**
+
+Sí. Modifica el valor del umbral en la línea `if (alcohol > 232)` del código. Valores más bajos aumentan sensibilidad, valores más altos la reducen.
+
+**5. ¿Funciona para medir alcohol en aliento real?**
+
+El sensor MQ-3 puede detectar alcohol en aliento, pero este es un prototipo educativo. Para uso real en seguridad vial se requieren alcoholímetros certificados y calibrados profesionalmente.
+
+
+## 🔗 Recursos adicionales
 
 - [Arduino Reference](https://www.arduino.cc/reference/en/)
 - [Datasheet Sensor MQ-3](https://www.sparkfun.com/datasheets/Sensors/MQ-3.pdf)
 - [Tutorial Arduino IDE](https://docs.arduino.cc/software/ide-v1/tutorials/Environment)
+- [Simulación en Tinkercad](https://www.tinkercad.com/circuits)
 
 ---
-
-**Nota**: Este proyecto es un prototipo educativo. Para aplicaciones de seguridad reales, se requieren alcoholímetros certificados y calibrados profesionalmente.
