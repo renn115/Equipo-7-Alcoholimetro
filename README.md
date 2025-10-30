@@ -4,9 +4,7 @@ Simulador de alcoholímetro que detecta concentración de alcohol en el aire med
 
 ## 📘 Descripción del proyecto
 
-El Alcoholímetro Digital es un prototipo educativo que detecta la concentración de vapores de alcohol en el aire y proporciona alertas inmediatas mediante indicadores visuales y sonoros. 
-
-Su objetivo es concientizar sobre los peligros de conducir bajo efectos del alcohol y demostrar el uso de sensores analógicos, actuadores y lógica de control en un proyecto real con Arduino.
+El <strong>Alcoholímetro Digital<strong> es un prototipo educativo que detecta la concentración de vapores de alcohol en el aire y proporciona alertas inmediatas mediante indicadores visuales y sonoros. 
 
 Este proyecto lee continuamente las concentraciones de alcohol del ambiente, compara los valores con un umbral de seguridad predefinido, y activa un LED verde cuando es seguro o un LED rojo con alarma sonora cuando detecta niveles peligrosos.
 
