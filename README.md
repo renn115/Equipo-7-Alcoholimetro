@@ -189,12 +189,4 @@ Sí. Modifica el valor del umbral en la línea **if (alcohol > 145)** del códig
 **5. ¿Funciona para medir alcohol en aliento real?**
 El sensor MQ-3 puede detectar alcohol en aliento, pero este es un prototipo educativo. Para uso real en seguridad vial se requieren alcoholímetros certificados y calibrados profesionalmente.
 
-
-## 🔗 Recursos adicionales
-
-- [Arduino Reference](https://www.arduino.cc/reference/en/)
-- [Datasheet Sensor MQ-3](https://www.sparkfun.com/datasheets/Sensors/MQ-3.pdf)
-- [Tutorial Arduino IDE](https://docs.arduino.cc/software/ide-v1/tutorials/Environment)
-- [Simulación en Tinkercad](https://www.tinkercad.com/things/i0X7Ia8Pfhfalcoholimetro/editelreturnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=C4cqbYQORHh3hMCSNM-x0G05L9NPku5si1E8rmpb-2Q)
-
 ---
