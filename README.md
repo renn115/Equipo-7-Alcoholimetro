@@ -38,7 +38,7 @@ La conducción bajo los efectos del alcohol es una de las principales causas de 
 
 **1. Descarga o clona este repositorio:**
 ```bash
-git clone https://github.com/tu-usuario/alcoholimetro-arduino.git](https://github.com/renn115/PIA_Controladores-y-Microcontroladores.git
+git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 ```
 
 **2. Abre el archivo `alcoholimetro.ino` en el Arduino IDE.**
