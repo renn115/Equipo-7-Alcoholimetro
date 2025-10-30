@@ -68,7 +68,7 @@ git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 3. Sopla cerca del sensor o acerca alcohol isopropílico
 4. Observa la respuesta del sistema:
    - **LED Verde encendido**: Nivel seguro (≤ 122)
-   - **LED Rojo + Alarma intermitente**: Nivel peligroso (> 145)
+   - **LED Rojo + Alarma intermitente**: Nivel peligroso (> 122)
 5. Puedes ver los valores en tiempo real abriendo el **Monitor Serial** (9600 baudios)
 
 ### 🧠 Comportamientos principales
