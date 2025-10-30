@@ -4,7 +4,7 @@ Simulador de alcoholímetro que detecta concentración de alcohol en el aire med
 
 ## 📘 Descripción del proyecto
 
-El **Alcoholímetro Digital** es un prototipo educativo que detecta la concentración de vapores de alcohol en el aire y proporciona alertas inmediatas mediante indicadores visuales y sonoros. 
+El **Alcoholímetro Digital** es un prototipo que detecta la concentración de vapores de alcohol en el aire y proporciona alertas inmediatas mediante indicadores visuales y sonoros. 
 
 Este proyecto lee continuamente las concentraciones de alcohol del ambiente, compara los valores con un umbral de seguridad predefinido, y activa un LED verde cuando es seguro o un LED rojo con alarma sonora cuando detecta niveles peligrosos.
 
@@ -169,26 +169,24 @@ El sensor MQ-3 detecta concentración de alcohol → Arduino lee el valor analó
 10. **Espera 30 segundos** para precalentamiento del sensor
 11. **Observa el comportamiento** en el monitor serial (opcional)
 
-## ❓ FAQ
+## ## ❓ FAQ
 
-**1. ¿Qué pasa si el LED verde no se enciende al inicio?**
+**1. ¿Qué pasa si el LED verde no se enciende al inicio?**  
+Espera entre **20 y 30 segundos** para que el sensor MQ-3 se caliente completamente. Durante este proceso es normal que los valores del sensor sean inestables o varíen rápidamente.
 
-Espera 20-30 segundos más para que el sensor se caliente completamente. Durante el precalentamiento puede mostrar valores erráticos.
-
+**2. El buzzer no suena.**  
+Verifica la **polaridad de conexión**: el pin positivo (+) debe ir al **pin 4** del Arduino y el negativo (–) a **GND**. Si sigue sin funcionar, prueba el buzzer con el siguiente código de prueba, ya que algunos modelos requieren señal **PWM**: **analogWrite(4, 128);**
+  
 **2. El buzzer no suena.**
-
 Verifica la polaridad (+ al pin 4, - a GND) y prueba con código de test individual. Algunos buzzers necesitan señal PWM: usa `analogWrite(4, 128)`.
 
 **3. Los valores del sensor siempre son 0 o 1023.**
-
-Verifica que la resistencia de 1kΩ esté bien conectada entre AOUT y GND. Mide con multímetro que haya 5V entre VCC y GND del sensor.
+Asegúrate de que la resistencia de 1 kΩ esté correctamente conectada entre AOUT y GND. Verifica también con un multímetro que haya 5V entre los pines VCC y GND del módulo sensor.
 
 **4. ¿Puedo ajustar la sensibilidad?**
-
-Sí. Modifica el valor del umbral en la línea `if (alcohol > 232)` del código. Valores más bajos aumentan sensibilidad, valores más altos la reducen.
+Sí. Modifica el valor del umbral en la línea **if (alcohol > 145)** del código. Valores más bajos aumentan sensibilidad, valores más altos la reducen.
 
 **5. ¿Funciona para medir alcohol en aliento real?**
-
 El sensor MQ-3 puede detectar alcohol en aliento, pero este es un prototipo educativo. Para uso real en seguridad vial se requieren alcoholímetros certificados y calibrados profesionalmente.
 
 
