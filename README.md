@@ -44,7 +44,7 @@ Este prototipo tiene fines didácticos y demostrativos. Su alcance es académico
 
 **1. Descarga o clona este repositorio:**
 ```bash
-git clone https://github.com/tu-usuario/alcoholimetro-arduino.git
+git clone https://github.com/tu-usuario/alcoholimetro-arduino.git](https://github.com/renn115/PIA_Controladores-y-Microcontroladores.git
 ```
 
 **2. Abre el archivo `alcoholimetro.ino` en el Arduino IDE.**
