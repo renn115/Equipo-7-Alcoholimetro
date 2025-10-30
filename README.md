@@ -23,7 +23,7 @@ La conducción bajo los efectos del alcohol es una de las principales causas de 
 - 1 × Buzzer piezoeléctrico (5V)
 - 2 × Resistencias 330Ω (para LEDs)
 - 1 × Resistencia 1kΩ (para sensor)
-- 1 × Protoboard (830 puntos)
+- 1 × Protoboard (400 puntos)
 - Cables jumper macho-macho
 - Cable USB tipo A a tipo B
 
