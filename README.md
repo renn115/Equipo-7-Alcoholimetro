@@ -4,7 +4,7 @@ Simulador de alcoholímetro que detecta concentración de alcohol en el aire med
 
 ## 📘 Descripción del proyecto
 
-El <strong>Alcoholímetro Digital<strong> es un prototipo educativo que detecta la concentración de vapores de alcohol en el aire y proporciona alertas inmediatas mediante indicadores visuales y sonoros. 
+El **Alcoholímetro Digital** es un prototipo educativo que detecta la concentración de vapores de alcohol en el aire y proporciona alertas inmediatas mediante indicadores visuales y sonoros. 
 
 Este proyecto lee continuamente las concentraciones de alcohol del ambiente, compara los valores con un umbral de seguridad predefinido, y activa un LED verde cuando es seguro o un LED rojo con alarma sonora cuando detecta niveles peligrosos.
 
@@ -103,19 +103,19 @@ git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 
 El sistema del Alcoholímetro está conformado por tres módulos principales: entrada, procesamiento y salida.
 
-**Módulo de entrada (Sensor):**
+**- Módulo de entrada (Sensor):**
 
 Compuesto por el sensor de gas MQ-3 y una resistencia de carga de 1kΩ. El sensor detecta vapores de etanol en el aire y genera una señal analógica proporcional a la concentración. Esta señal es enviada al pin A0 del Arduino, donde es convertida a valores digitales de 0 a 1023 mediante el conversor analógico-digital de 10 bits.
 
-**Módulo de procesamiento (Arduino UNO):**
+**- Módulo de procesamiento (Arduino UNO):**
 
 Es el cerebro del sistema. Recibe las lecturas del sensor, analiza la información y decide las acciones que debe realizar. A partir de la lógica del programa, el Arduino compara el valor leído con el umbral de seguridad (232). Si el valor es mayor, activa el estado de peligro; si es menor o igual, mantiene el estado seguro. Este procesamiento ocurre continuamente en el loop principal.
 
-**Módulo de salida (Actuadores):**
+**- Módulo de salida (Actuadores):**
 
 Incluye dos LEDs (verde y rojo) que proporcionan retroalimentación visual del estado, un buzzer que emite alarma sonora intermitente en caso de peligro, y comunicación serial USB para monitoreo en tiempo real. Los LEDs están conectados a los pines digitales 2 y 3 con resistencias limitadoras de 220Ω. El buzzer está conectado al pin 4 y se activa con un patrón de 1 segundo encendido y 1 segundo apagado.
 
-**Flujo de funcionamiento:**
+**- Flujo de funcionamiento:**
 
 El sensor MQ-3 detecta concentración de alcohol → Arduino lee el valor analógico y lo convierte a digital → compara con el umbral (232) → activa LED verde si es seguro o LED rojo + buzzer si es peligroso → envía valores por serial para monitoreo → repite el ciclo continuamente.
 
@@ -160,8 +160,8 @@ El sensor MQ-3 detecta concentración de alcohol → Arduino lee el valor analó
 
 1. **Instala Arduino IDE** desde https://www.arduino.cc/en/software
 2. **Conecta el sensor MQ-3** al pin A0 con resistencia de 1kΩ a GND
-3. **Conecta el LED verde** al pin 2 con resistencia de 220Ω
-4. **Conecta el LED rojo** al pin 3 con resistencia de 220Ω
+3. **Conecta el LED verde** al pin 2 con resistencia de 330Ω
+4. **Conecta el LED rojo** al pin 3 con resistencia de 330Ω
 5. **Conecta el buzzer** al pin 4
 6. **Conecta todos los GND** a tierra común del Arduino
 7. **Conecta VCC del sensor** a 5V del Arduino
