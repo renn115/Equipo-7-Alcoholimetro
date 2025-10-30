@@ -40,16 +40,16 @@ La conducción bajo los efectos del alcohol es una de las principales causas de 
 ```bash
 git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 ```
+**2. Abre la carpeta `Alcoholimetro ARDUINO`
+**3. Abre el archivo `Alcoholimetro.ino` en el Arduino IDE.**
 
-**2. Abre el archivo `alcoholimetro.ino` en el Arduino IDE.**
-
-**3. Selecciona tu placa y puerto:**
+**4. Selecciona tu placa y puerto:**
 - Placa: Arduino UNO
 - Puerto: COMx (Windows) o /dev/ttyUSBx (Linux/Mac)
 
-**4. Carga el código en el Arduino con el botón Subir (Upload).**
+**5. Carga el código en el Arduino con el botón Subir (Upload).**
 
-**5. Conecta los componentes según el diagrama de pines:**
+**6. Conecta los componentes según el diagrama de pines:**
 
 | Componente | Pin Arduino | Observaciones |
 |------------|-------------|---------------|
