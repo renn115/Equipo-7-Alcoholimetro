@@ -40,7 +40,8 @@ La conducción bajo los efectos del alcohol es una de las principales causas de 
 ```bash
 git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 ```
-**2. Abre la carpeta `Alcoholimetro ARDUINO`
+**2. Abre la carpeta `Alcoholimetro ARDUINO`**
+
 **3. Abre el archivo `Alcoholimetro.ino` en el Arduino IDE.**
 
 **4. Selecciona tu placa y puerto:**
