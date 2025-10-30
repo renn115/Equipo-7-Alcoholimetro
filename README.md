@@ -56,8 +56,8 @@ git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 | Sensor MQ-3 VCC | 5V | Alimentación |
 | Sensor MQ-3 GND | GND | Tierra |
 | Sensor MQ-3 AOUT | A0 | A través de resistencia 1kΩ |
-| LED Verde (+) | Pin 2 | Con resistencia 220Ω |
-| LED Rojo (+) | Pin 3 | Con resistencia 220Ω |
+| LED Verde (+) | Pin 2 | Con resistencia 330Ω |
+| LED Rojo (+) | Pin 3 | Con resistencia 330Ω |
 | Buzzer (+) | Pin 4 | Directo |
 | Todos los (-) | GND | Tierra común |
 
