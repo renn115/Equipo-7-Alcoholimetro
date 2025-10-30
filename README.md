@@ -123,27 +123,27 @@ El sensor MQ-3 detecta concentración de alcohol → Arduino lee el valor analó
 **Sensor MQ-3 → Arduino:**
 - Pin A0 (entrada analógica)
 - Señal: 0-1023 (conversión ADC)
-- `analogRead(A0)`
+- **analogRead(A0)**
 
 **Arduino → LED Verde:**
 - Pin 2 (salida digital)
 - Señal: HIGH/LOW
-- Activo cuando `alcohol ≤ 232`
+- Activo cuando **alcohol ≤ 232**
 
 **Arduino → LED Rojo:**
 - Pin 3 (salida digital)
 - Señal: HIGH/LOW
-- Activo cuando `alcohol > 232`
+- Activo cuando **alcohol > 232**
 
 **Arduino → Buzzer:**
 - Pin 4 (salida digital)
 - Señal: Intermitente 1s ON/OFF
-- Activo cuando `alcohol > 232`
+- Activo cuando **alcohol > 232**
 
 **Arduino → PC:**
 - Puerto USB
 - UART 9600 baudios
-- `Serial.println(alcohol)`
+- **Serial.println(alcohol)**
 
 ## 🧠 Resumen técnico del sistema
 
