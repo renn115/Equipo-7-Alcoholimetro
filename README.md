@@ -102,10 +102,6 @@ git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 
 El sistema del Alcoholímetro está conformado por tres módulos principales: entrada, procesamiento y salida.
 
-## Arquitectura del Sistema
-
-El Alcoholímetro se compone de tres módulos principales: entrada, procesamiento y salida.
-
 **- Módulo de entrada (Sensor):**  
 Sensor MQ-3 con resistencia de 1kΩ. Detecta alcohol en el aire y envía señal analógica al pin A0 del Arduino (0-1023).
 
