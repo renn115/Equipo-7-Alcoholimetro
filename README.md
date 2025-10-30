@@ -187,10 +187,6 @@ Este es un proyecto educativo de código abierto. Puedes contribuir:
 - Compartiendo tu implementación física
 - Creando material educativo adicional
 
-## Autor
-
-[Tu Nombre]
-
 ## Licencia
 
 Este proyecto es de código abierto con fines educativos.
