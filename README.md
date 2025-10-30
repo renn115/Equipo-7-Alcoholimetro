@@ -8,11 +8,11 @@ El <strong>Alcoholímetro Digital<strong> es un prototipo educativo que detecta 
 
 Este proyecto lee continuamente las concentraciones de alcohol del ambiente, compara los valores con un umbral de seguridad predefinido, y activa un LED verde cuando es seguro o un LED rojo con alarma sonora cuando detecta niveles peligrosos.
 
-### Problema que resuelve
+### // Problema que resuelve
 
 La conducción bajo los efectos del alcohol es una de las principales causas de accidentes de tránsito mortales. Este alcoholímetro ofrece una herramienta accesible para verificar niveles de alcohol antes de conducir, promoviendo decisiones responsables y previniendo accidentes.
 
-### Alcance
+### // Alcance
 
 Este prototipo tiene fines didácticos y demostrativos. Su alcance es académico: demostrar cómo integrar sensores analógicos, indicadores LED y alertas sonoras mediante programación en Arduino para abordar un problema de seguridad vial.
 
