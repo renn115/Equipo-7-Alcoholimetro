@@ -106,18 +106,18 @@ El sistema del Alcoholímetro está conformado por tres módulos principales: en
 
 El Alcoholímetro se compone de tres módulos principales: entrada, procesamiento y salida.
 
-**Módulo de entrada (Sensor):**  
+**- Módulo de entrada (Sensor):**  
 Sensor MQ-3 con resistencia de 1kΩ. Detecta alcohol en el aire y envía señal analógica al pin A0 del Arduino (0-1023).
 
-**Módulo de procesamiento (Arduino UNO):**  
+**- Módulo de procesamiento (Arduino UNO):**  
 Recibe lecturas del sensor, compara con el umbral (145) y decide acciones: LED verde si seguro, LED rojo + buzzer si peligroso. Operación continua en el loop principal.
 
-**Módulo de salida (Actuadores):**  
+**- Módulo de salida (Actuadores):**  
 - LEDs verde (pin 2) y rojo (pin 3) con resistencias de 220Ω.  
 - Buzzer en pin 4 con patrón intermitente.  
 - Comunicación serial para monitoreo en tiempo real.
 
-**Flujo de funcionamiento:**  
+**- Flujo de funcionamiento:**  
 Sensor MQ-3 → Arduino lee valor analógico → convierte a digital → compara con umbral → activa LEDs y buzzer → envía datos por serial → repite.
 
 ### 🔄 Comunicación entre módulos
