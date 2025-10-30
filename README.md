@@ -102,21 +102,23 @@ git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 
 El sistema del Alcoholímetro está conformado por tres módulos principales: entrada, procesamiento y salida.
 
-**- Módulo de entrada (Sensor):**
+## Arquitectura del Sistema
 
-Compuesto por el sensor de gas MQ-3 y una resistencia de carga de 1kΩ. El sensor detecta vapores de etanol en el aire y genera una señal analógica proporcional a la concentración. Esta señal es enviada al pin A0 del Arduino, donde es convertida a valores digitales de 0 a 1023 mediante el conversor analógico-digital de 10 bits.
+El Alcoholímetro se compone de tres módulos principales: entrada, procesamiento y salida.
 
-**- Módulo de procesamiento (Arduino UNO):**
+**Módulo de entrada (Sensor):**  
+Sensor MQ-3 con resistencia de 1kΩ. Detecta alcohol en el aire y envía señal analógica al pin A0 del Arduino (0-1023).
 
-Es el cerebro del sistema. Recibe las lecturas del sensor, analiza la información y decide las acciones que debe realizar. A partir de la lógica del programa, el Arduino compara el valor leído con el umbral de seguridad (232). Si el valor es mayor, activa el estado de peligro; si es menor o igual, mantiene el estado seguro. Este procesamiento ocurre continuamente en el loop principal.
+**Módulo de procesamiento (Arduino UNO):**  
+Recibe lecturas del sensor, compara con el umbral (145) y decide acciones: LED verde si seguro, LED rojo + buzzer si peligroso. Operación continua en el loop principal.
 
-**- Módulo de salida (Actuadores):**
+**Módulo de salida (Actuadores):**  
+- LEDs verde (pin 2) y rojo (pin 3) con resistencias de 220Ω.  
+- Buzzer en pin 4 con patrón intermitente.  
+- Comunicación serial para monitoreo en tiempo real.
 
-Incluye dos LEDs (verde y rojo) que proporcionan retroalimentación visual del estado, un buzzer que emite alarma sonora intermitente en caso de peligro, y comunicación serial USB para monitoreo en tiempo real. Los LEDs están conectados a los pines digitales 2 y 3 con resistencias limitadoras de 220Ω. El buzzer está conectado al pin 4 y se activa con un patrón de 1 segundo encendido y 1 segundo apagado.
-
-**- Flujo de funcionamiento:**
-
-El sensor MQ-3 detecta concentración de alcohol → Arduino lee el valor analógico y lo convierte a digital → compara con el umbral (232) → activa LED verde si es seguro o LED rojo + buzzer si es peligroso → envía valores por serial para monitoreo → repite el ciclo continuamente.
+**Flujo de funcionamiento:**  
+Sensor MQ-3 → Arduino lee valor analógico → convierte a digital → compara con umbral → activa LEDs y buzzer → envía datos por serial → repite.
 
 ### 🔄 Comunicación entre módulos
 
@@ -171,22 +173,19 @@ El sensor MQ-3 detecta concentración de alcohol → Arduino lee el valor analó
 
 ## ## ❓ FAQ
 
-**1. ¿Qué pasa si el LED verde no se enciende al inicio?**  
-Espera entre **20 y 30 segundos** para que el sensor MQ-3 se caliente completamente. Durante este proceso es normal que los valores del sensor sean inestables o varíen rápidamente.
+**¿Qué pasa si el LED verde no se enciende al inicio?**  
+Espera 20-30 segundos para que el sensor MQ-3 se caliente; es normal que los valores sean inestables al inicio.
 
-**2. El buzzer no suena.**  
-Verifica la **polaridad de conexión**: el pin positivo (+) debe ir al **pin 4** del Arduino y el negativo (–) a **GND**. Si sigue sin funcionar, prueba el buzzer con el siguiente código de prueba, ya que algunos modelos requieren señal **PWM**: **analogWrite(4, 128);**
-  
-**2. El buzzer no suena.**
-Verifica la polaridad (+ al pin 4, - a GND) y prueba con código de test individual. Algunos buzzers necesitan señal PWM: usa **analogWrite(4, 128)**.
+**¿Por qué el buzzer no suena?**
+Verifica la polaridad (+ al pin 4, – a GND). Algunos buzzer requieren señal PWM: **analogWrite(4, 128);**.
 
-**3. Los valores del sensor siempre son 0 o 1023.**
-Asegúrate de que la resistencia de 1 kΩ esté correctamente conectada entre AOUT y GND. Verifica también con un multímetro que haya 5V entre los pines VCC y GND del módulo sensor.
+**¿Por qué los valores del sensor siempre son 0 o 1023?**  
+Asegúrate de que la resistencia de 1 kΩ esté conectada entre AOUT y GND, y que haya 5V entre VCC y GND.
 
-**4. ¿Puedo ajustar la sensibilidad?**
-Sí. Modifica el valor del umbral en la línea **if (alcohol > 145)** del código. Valores más bajos aumentan sensibilidad, valores más altos la reducen.
+**¿Puedo ajustar la sensibilidad?**  
+Sí. Modifica el umbral en el código `if (alcohol > 145)`; valores menores aumentan la sensibilidad, valores mayores la reducen.
 
-**5. ¿Funciona para medir alcohol en aliento real?**
-El sensor MQ-3 puede detectar alcohol en aliento, pero este es un prototipo educativo. Para uso real en seguridad vial se requieren alcoholímetros certificados y calibrados profesionalmente.
+**¿Funciona para medir alcohol en aliento real?**  
+MQ-3 puede detectar alcohol, pero este proyecto es educativo. Para uso real se requieren alcoholímetros certificados.
 
 ---
