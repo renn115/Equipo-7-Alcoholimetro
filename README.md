@@ -178,7 +178,7 @@ Espera entre **20 y 30 segundos** para que el sensor MQ-3 se caliente completame
 Verifica la **polaridad de conexión**: el pin positivo (+) debe ir al **pin 4** del Arduino y el negativo (–) a **GND**. Si sigue sin funcionar, prueba el buzzer con el siguiente código de prueba, ya que algunos modelos requieren señal **PWM**: **analogWrite(4, 128);**
   
 **2. El buzzer no suena.**
-Verifica la polaridad (+ al pin 4, - a GND) y prueba con código de test individual. Algunos buzzers necesitan señal PWM: usa `analogWrite(4, 128)`.
+Verifica la polaridad (+ al pin 4, - a GND) y prueba con código de test individual. Algunos buzzers necesitan señal PWM: usa **analogWrite(4, 128)**.
 
 **3. Los valores del sensor siempre son 0 o 1023.**
 Asegúrate de que la resistencia de 1 kΩ esté correctamente conectada entre AOUT y GND. Verifica también con un multímetro que haya 5V entre los pines VCC y GND del módulo sensor.
