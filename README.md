@@ -67,8 +67,8 @@ git clone https://github.com/renn115/Equipo-7-Alcoholimetro.git
 2. Espera 20-30 segundos para que el sensor MQ-3 se caliente
 3. Sopla cerca del sensor o acerca alcohol isopropílico
 4. Observa la respuesta del sistema:
-   - **LED Verde encendido**: Nivel seguro (≤ 232)
-   - **LED Rojo + Alarma intermitente**: Nivel peligroso (> 232)
+   - **LED Verde encendido**: Nivel seguro (≤ 122)
+   - **LED Rojo + Alarma intermitente**: Nivel peligroso (> 145)
 5. Puedes ver los valores en tiempo real abriendo el **Monitor Serial** (9600 baudios)
 
 ### 🧠 Comportamientos principales
@@ -109,7 +109,7 @@ Sensor MQ-3 con resistencia de 1kΩ. Detecta alcohol en el aire y envía señal 
 Recibe lecturas del sensor, compara con el umbral (145) y decide acciones: LED verde si seguro, LED rojo + buzzer si peligroso. Operación continua en el loop principal.
 
 **- Módulo de salida (Actuadores):**  
-- LEDs verde (pin 2) y rojo (pin 3) con resistencias de 220Ω.  
+- LEDs verde (pin 2) y rojo (pin 3) con resistencias de 330Ω.  
 - Buzzer en pin 4 con patrón intermitente.  
 - Comunicación serial para monitoreo en tiempo real.
 
@@ -126,17 +126,17 @@ Sensor MQ-3 → Arduino lee valor analógico → convierte a digital → compara
 **Arduino → LED Verde:**
 - Pin 2 (salida digital)
 - Señal: HIGH/LOW
-- Activo cuando **alcohol ≤ 232**
+- Activo cuando **alcohol ≤ 122**
 
 **Arduino → LED Rojo:**
 - Pin 3 (salida digital)
 - Señal: HIGH/LOW
-- Activo cuando **alcohol > 232**
+- Activo cuando **alcohol > 122**
 
 **Arduino → Buzzer:**
 - Pin 4 (salida digital)
 - Señal: Intermitente 1s ON/OFF
-- Activo cuando **alcohol > 232**
+- Activo cuando **alcohol > 122**
 
 **Arduino → PC:**
 - Puerto USB
@@ -149,7 +149,7 @@ Sensor MQ-3 → Arduino lee valor analógico → convierte a digital → compara
 - Sensor analógico MQ-3 mide concentración de alcohol
 - LEDs controlados por pines digitales 2 y 3
 - Buzzer controlado por pin digital 4
-- Lógica de decisión basada en umbral (232)
+- Lógica de decisión basada en umbral (145)
 - Comunicación serial a 9600 baudios para monitoreo
 - Sistema de lectura continua en loop infinito
 
